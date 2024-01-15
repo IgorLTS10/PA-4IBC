@@ -1,0 +1,83 @@
+/* Navbar.css */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #E5E4E4; /* Couleur de fond de votre navbar */
+    color: black; /* Couleur du texte de votre navbar */
+    height: 50px;
+  }
+  
+  .left-section {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-right: 60px; /* Augmentez la valeur de la marge pour plus d'espace */
+  }
+  
+  .nav-links {
+    display: flex;
+    margin-right: 20px;
+  }
+  
+  .nav-links span {
+    margin-right: 15px;
+  }
+  
+  .right-section {
+    display: flex;
+    align-items: center;
+  }
+  
+  input {
+    padding: 5px;
+    margin-right: 10px;
+    border-radius: 10px 10px 10px 10px;
+    border: 1px solid #ccc;
+    width: 400px;
+    height: 20px;
+  }
+  
+  button {
+    padding: 8px;
+    background-color: black; /* Couleur de fond du bouton Connect */
+    color: white; /* Couleur du texte du bouton Connect */
+    border: grey 2px solid;
+    cursor: pointer;
+    border-radius: 10px 10px 10px 10px;
+    width: 125px;
+  }
+
+  .connection-button {
+    display: flex;
+    align-items: center;
+  }
+  
+  .connection-button button {
+    margin-right: 10px;
+  }
+
+  .search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 10px; /* Ajustez la position de l'icône selon vos besoins */
+    color: #555; /* Couleur de l'icône */
+    cursor: pointer;
+  }
+  
+  /* Ajoutez une marge à droite pour séparer l'icône du texte */
+  input[type="text"] {
+    padding-left: 30px; /* Ajustez la valeur en fonction de la largeur de l'icône et de l'espace désiré */
+  }
+  
+ 

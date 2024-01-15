@@ -8,6 +8,8 @@ import {
 import axios from "axios";
 import { useSendTransaction, useWaitForTransaction } from "wagmi";
 import tokenList from "../tokenList.json";
+import "./SwapComponent.css";
+import "../App.css";
 
 interface SwapProps {
     address: string;

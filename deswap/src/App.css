@@ -82,7 +82,7 @@ header {
 
 .tradeBox {
   width: 400px;
-  background-color: #0E111B;
+  background-color: #f9f9f9;
   border: 2px solid #21273a;
   min-height: 300px;
   border-radius: 15px;
@@ -100,6 +100,7 @@ header {
   justify-content: space-between;
   align-items: center;
   width: 98%;
+  color: black;
 }
 
 .cog {
@@ -238,31 +239,4 @@ header {
   display: flex;
   flex-direction: column;
   gap: 10px
-}
-
-.tokenChoice {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding-left: 20px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.tokenChoice:hover {
-  cursor: pointer;
-  background-color: #1f2639;
-}
-
-.tokenName {
-  margin-left: 10px;
-  font-size: 16px;
-  font-weight: 500;
-}
-
-.tokenTicker {
-  margin-left: 10px;
-  font-size: 13px;
-  font-weight: 300;
-  color: #51596f;
 }

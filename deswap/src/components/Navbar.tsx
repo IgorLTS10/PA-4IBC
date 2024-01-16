@@ -23,7 +23,6 @@ const Navbar: React.FC = () => {
       </div>
       <div className="connection-button">
         <button>Connect </button>
-        <div className="logo-square"></div>
       </div>
     </div>
   );

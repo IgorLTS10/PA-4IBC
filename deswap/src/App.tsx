@@ -23,6 +23,8 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Swap isConnected={isConnected} address={safeAddress} />} />
                     <Route path="/tokens" element={<Tokens />} />
+                    <Route path="/staking" element={<Staking />} />
+
                 </Routes>
             </div>
         </div>

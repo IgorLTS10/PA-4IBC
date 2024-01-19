@@ -3,6 +3,8 @@ import React from 'react';
 import './Navbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
+
 // Importa Link solo si lo vas a usar, de lo contrario quita la línea siguiente
 // import { Link } from "react-router-dom";
 
@@ -18,9 +20,11 @@ const Navbar: React.FC<NavbarProps> = ({ address, isConnected, connect }) => {
             <div className="left-section">
                 <span className="logo">DeSwap</span>
                 <div className="nav-links">
-                    <span>Swap</span>
-                    <span>Tokens</span>
-                    <span>Pool</span>
+                    <div className="nav-links">
+                        <span><Link to="/swap">Swap</Link></span>
+                        <span><Link to="/tokens">Tokens</Link></span>
+                        <span><Link to="/staking">Staking</Link></span>
+                    </div>
                 </div>
             </div>
             <div className="right-section">

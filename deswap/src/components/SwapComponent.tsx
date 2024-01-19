@@ -1,4 +1,4 @@
-import React, { useState, useEffect, ChangeEvent } from "react";
+import React, { useState, useEffect } from "react";
 import { Input, Popover, Radio, Modal, message, RadioChangeEvent } from "antd";
 import {
     ArrowDownOutlined,
@@ -155,52 +155,50 @@ const Swap: React.FC<SwapProps> = ({ address, isConnected }) => {
 
     }
 
+// El primer useEffect no necesita cambios.
 
-    useEffect(()=>{
-
-        fetchPrices(tokenList[0].address, tokenList[1].address)
-
-    }, [])
-
-    useEffect(()=>{
-
-        if(txDetails.to && isConnected){
+    useEffect(() => {
+        // Envía la transacción si txDetails.to es válido y está conectado.
+        if (txDetails.to && isConnected) {
             sendTransaction();
         }
-    }, [txDetails])
+    }, [txDetails, isConnected, sendTransaction]);
 
-    useEffect(()=>{
-
+    useEffect(() => {
+        // Destruye cualquier mensaje existente.
         messageApi.destroy();
 
-        if(isLoading){
+        // Muestra el mensaje de carga si la transacción está en proceso.
+        if (isLoading) {
             messageApi.open({
                 type: 'loading',
                 content: 'Transaction is Pending...',
                 duration: 0,
-            })
+            });
         }
+    }, [isLoading, messageApi]);
 
-    },[isLoading])
-
-    useEffect(()=>{
+    useEffect(() => {
+        // Destruye cualquier mensaje existente.
         messageApi.destroy();
-        if(isSuccess){
+
+        // Muestra un mensaje de éxito o error según el resultado de la transacción.
+        if (isSuccess) {
             messageApi.open({
                 type: 'success',
                 content: 'Transaction Successful',
                 duration: 1.5,
-            })
-        }else if(txDetails.to){
+            });
+        } else if (!isLoading && txDetails.to) {
+            // Solo muestra el mensaje de error si la transacción no está cargando y txDetails.to es válido.
             messageApi.open({
                 type: 'error',
                 content: 'Transaction Failed',
-                duration: 1.50,
-            })
+                duration: 1.5,
+            });
         }
+    }, [isSuccess, isLoading, txDetails.to, messageApi]);
 
-
-    },[isSuccess])
 
 
     const settings = (

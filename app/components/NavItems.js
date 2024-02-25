@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'; // Importa useRouter de next/router
 const NavItems = () => {
     const router = useRouter(); // Utiliza el hook useRouter
     const handleNavigation = (path) => {
-        router.push(`/${path.toLowerCase()}`); // Navega a la ruta especificada
+        router.push(`/${path.toLowerCase()}`);
     };
 
     return (
